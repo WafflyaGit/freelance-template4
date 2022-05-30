@@ -1,0 +1,48 @@
+.ranges {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: rem(30);
+    width: rem(300);
+    height: rem(20);
+    &__progress {
+        position: relative;
+        width: 100%;
+        height: rem(5);
+        background-color: lightgray;
+        border-radius: rem(5);
+        .ranges__track {
+            position: absolute;
+            left: 25%;
+            right: 25%;
+            height: rem(5);
+            background-color: tomato;
+            border-radius: rem(5);
+        }
+    }
+    &__item {
+        background: none;
+        appearance: none;
+        position: absolute;
+        width: 100%;
+        pointer-events: none;
+        @mixin thumb {
+            height: rem(20);
+            width: rem(20);
+            border-radius: 50%;
+            appearance: none;
+            pointer-events: auto;
+            border: none;
+            background-color: tomato;
+        }
+        &::-webkit-slider-thumb {
+            @include thumb();
+        }
+        &::-moz-range-thumb {
+            @include thumb();
+        }
+        &::-ms-track {
+            @include thumb();
+        }
+    }
+}

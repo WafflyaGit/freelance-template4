@@ -1,0 +1,46 @@
+@use 'sass:math';
+@import "base/null.scss";
+@import "base/functions.scss";
+@import "base/mixins.scss";
+
+// Variables
+$containerMaxWidth: 1100;
+$containerPadding: 30;
+$fontSize: rem(16);
+
+// Breakpoints
+$md1: em($containerMaxWidth + $containerPadding);
+$md2: em(991.98);
+$md3: em(767.98);
+$md4: em(479.98);
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada:regular,400,600,700&display=swap");
+// Colors
+$mainColor: #fff;
+
+body {
+    background-color: $mainColor;
+    font-size: $fontSize;
+    font-family: 'Montserrat', sans-serif;
+}
+
+// Container
+[class*='__container'] {
+    max-width: rem($containerMaxWidth);
+    margin: 0 auto;
+    padding: 0 rem($containerPadding);
+}
+
+@import "_header.scss";
+@import "main.scss";
+@import "_footer.scss";
+//@import "_icons.scss";
+
+// Plugins
+//@import "base/accordions.scss";
+//@import "base/modals.scss";
+//@import "base/ranges.scss";
+//@import "base/tabs.scss";
+//@import "base/slider.scss";
+//@import "base/transfers.scss";
